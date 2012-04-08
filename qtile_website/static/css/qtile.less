@@ -1,0 +1,243 @@
+@import "elements.less";
+
+// Sticky footer
+
+* { margin: 0px; }
+
+html, body {
+    height: 100%;
+}
+
+#wrapper {
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -40px;
+    min-height: 100%;
+}
+
+#push, #footer {
+    .clear;
+    height: 40px;
+}
+
+// Now back to our regularly scheduled program
+
+.clear { clear: both; }
+.block {
+    .clear;
+    margin: 0px auto;
+    width: 760px;
+}
+
+.bold, b, strong { font-weight: 700; }
+.semi-bold { font-weight: 600; }
+.italic { font-style: italic; }
+.faded { .opacity(.7); }
+
+a {
+    color: #369;
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+        color: #c63;
+    }
+}
+
+
+body {
+    background: -webkit-gradient(linear, 50% 0%, 50% 175, color-stop(0%, #999), color-stop(100%, #eee));
+    background: -webkit-linear-gradient(top, #bbb 0%, #eee 175px);
+    background: -moz-linear-gradient(top, #ccc 0%, #eee 175px);
+    background: -o-linear-gradient(top, #ccc 0%, #eee 175px);
+    background: linear-gradient(top, #ccc 0%, #eee 175px);
+    background-color: #eee;
+    background-repeat: no-repeat;
+
+    font: 16px/1.5 'Open Sans', sans-serif;
+    margin: 0px;
+    text-shadow: 1px 1px rgba(0, 0, 0, .1);
+}
+
+header {
+    height: 60px;
+    padding-top: 1em;
+
+    h1 {
+        float: left;
+        font-size: 2.4em;
+        line-height: 60px;
+        margin: 0px;
+
+        a {
+            color: #000;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: #036;
+            }
+        }
+
+        small {
+            font-weight: normal;
+        }
+    }
+
+    nav {
+        float: right;
+        height: 60px;
+        line-height: 60px;
+
+        ul {
+            list-style-type: none;
+            float: left;
+            margin: 0px;
+            padding: 0px;
+
+            li {
+                display: inline;
+                margin-left: 20px;
+
+                a {
+                    .rounded(5px);
+                    .gradient(#f6f6f6, #eee, #f6f6f6);
+                    .drop-shadow(0px, 0px, 3px, .2);
+                    border: #fff 1px solid;
+                    font-weight: 600;
+                    padding: 5px 10px;
+                    text-shadow: 1px 1px #fff;
+
+                    &:hover,
+                    &:focus {
+                        .gradient(#f0f0f0, #d9d9d9, #f0f0f0);
+                        border: #f6f6f6 1px solid;
+                        text-shadow: 1px 1px #f6f6f6;
+                    }
+
+                    &:active {
+                        .gradient(#f0f0f0, #f0f0f0, #d9d9d9);
+                        border: #f6f6f6 1px solid;
+                        text-shadow: 1px 1px #f6f6f6;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    .gradient(#15181a, #16191b, #2a2c2e);
+    .inner-shadow(0px, 1px, 1px, .25);
+    color: #eee;
+    font-size: .8em;
+    text-align: center;
+    text-shadow: 0px -1px 0px #000;
+
+    a {
+        color: #eee;
+        text-decoration: underline;
+    }
+    span { line-height: 40px; }
+}
+
+.github-ribbon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    img { border: 0px; }
+}
+
+div.aside {
+    .rounded(5px);
+    background: #f6f6f6;
+    border: #ddd 1px solid;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+div.hook {
+    .clear;
+    .gradient(#15181a, #16191b, #2a2c2e);
+    .inner-shadow(0px, 1px, 1px, .25);
+    .rounded(5px);
+    color: #fff;
+    font-size: 1.2em;
+    margin: 1em 0;
+    padding: 1em;
+    text-align: center;
+    text-shadow: 0px -1px 0px #000;
+
+    a {
+        color: #7e0;
+        &:hover,
+        &:active,
+        &:focus {
+            color: #9f6;
+        }
+    }
+
+    p {
+        &:first-child { margin-top: 0px; }
+        &:last-child { margin-bottom: 0px; }
+    }
+}
+
+ul.features {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+
+    li {
+        margin-bottom: 1em;
+    }
+}
+
+div.split {
+    .clear;
+    margin: 1em 0;
+
+    .left {
+        float: left;
+        width: 50%;
+    }
+    .right {
+        float: right;
+        width: 50%;
+    }
+
+    .narrow { width: 35%; }
+    .wide { width: 65%; }
+}
+
+ul#community,
+ul#get-involved {
+    list-style-type: none;
+    margin-top: -1em;
+    padding-left: 1em;
+
+    li {
+        margin-bottom: 1em;
+        h3 {
+            margin: 0px;
+
+            a { font-weight: 600; }
+        }
+
+        div { .italic; }
+    }
+}
+
+ul#screenshots {
+    line-height: 1;
+    list-style-type: none;
+    padding: 0px;
+
+    li {
+        float: left;
+        text-align: center;
+        margin-bottom: 1em;
+        width: 33.33%;
+    }
+}
