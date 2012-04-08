@@ -1,1 +1,1 @@
-web: python qtile_website/app.py
+web: cherryd qtile_website/app.py
