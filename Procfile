@@ -1,1 +1,1 @@
-web: cherryd -d -i qtile_website.app
+web: cherryd -i qtile_website.app
