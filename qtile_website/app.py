@@ -22,9 +22,11 @@ class QtileDotOrg(object):
             template = env.get_template('404.html')
         return template.render()
 
-cherrypy.config.update({'server.socket_host': '0.0.0.0',})
-cherrypy.config.update({'server.socket_port': int(os.environ.get('PORT', '8080')),})
-cherrypy.quickstart(QtileDotOrg(), config = {
+cherrypy.config.update({
+    'server.socket_host': '0.0.0.0',
+    'server.socket_port': int(os.environ.get('PORT', 8080)),
+    })
+cherrypy.tree.mount(QtileDotOrg(), config={
     '/favicon.ico': {
         'tools.staticfile.on': True,
         'tools.staticfile.filename': os.path.join(root, 'static/img/favicon.ico'),
