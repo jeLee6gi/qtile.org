@@ -1,3 +1,4 @@
-cherrypy==3.2.2
+#cherrypy==3.2.2
+-e hg+https://bitbucket.org/cherrypy/cherrypy#egg=cherrypy
 jinja2==2.6
 pygments==1.5
