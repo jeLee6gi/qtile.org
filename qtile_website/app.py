@@ -26,13 +26,16 @@ class QtileDotOrg(object):
 
 ## Monkeypatch for Heroku
 ## See: https://bitbucket.org/cherrypy/cherrypy/issue/1100/cherrypy-322-gives-engine-error-when
+from cherrypy.process import servers
 def fake_wait_for_occupied_port(host, port): return
-cherrypy.process.servers.wait_for_occupied_port = fake_wait_for_occupied_port
+servers.wait_for_occupied_port = fake_wait_for_occupied_port
 
+## Set the config and it's time to rock 'n roll!
 cherrypy.config.update({
     'server.socket_host': '0.0.0.0',
     'server.socket_port': int(os.environ.get('PORT', 8080)),
     })
+
 cherrypy.quickstart(QtileDotOrg(), config={
     '/favicon.ico': {
         'tools.staticfile.on': True,
