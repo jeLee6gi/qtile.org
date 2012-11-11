@@ -1,5 +1,5 @@
-Flask==0.8
-gevent==0.13.6
-gunicorn==0.14.2
+Flask==0.9
+gevent==0.13.8
+gunicorn==0.15.0
 jinja2==2.6
 pygments==1.5
